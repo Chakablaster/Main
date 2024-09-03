@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data Visualisation Lab 1.1">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Mohamed Usaidh Abdul Razzaq">
+
+    <title>Lab 1.1 HTML and CSS Demo Page</title>
+    <link href="styles/s.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Lab 1.1 HTML and CSS Demo Page</h1>
+        <nav>
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="lab1.1.html" class="menu-item">Lab 1.1</a>
+            <a href="lab1.2.html" class="menu-item">Lab 1.2</a>
+            <a href="lab1.3.html" class="menu-item">Lab 1.3</a>
+            <label class="switch">
+                <input class="pristine" type="checkbox" name="toggle" value="on">
+                <span class="slider"></span>
+                    <span class="label label-light">L</span>
+                    <span class="label label-dark">D</span>
+            </label>
+        </nav>
+    </header>
+
+    <section id="lab1.1">
+        <article>
+            <header>
+                <h2>Pets and Pandemic</h2>
+                <h3>Mohamed Usaidh Abdul Razzaq</h3>
+            </header>
+
+            <p>
+                A report from Animal Medicines Australia (AMA) has found that many Australians took the opportunity 
+                to introduce a pet into their household during the pandemic. 
+                Their survey indicated a significant increase in households taking in new dogs, 
+                fish, or birds. Their research also indicated that pets had a number of positive influences on their lives 
+                such as:
+            </p>
+
+            <ul class="highlight-list">
+                <li>- Companionship</li>
+                <li>- Better mental health</li>
+                <li>- Joy and happiness.</li>
+            </ul>
+
+            <p>
+                With the increase in pet ownership, the AMA encourages policymakers to consider the needs of companion 
+                animals and their owners when considering rental, strata, and body corporate regulations, as well as 
+                accepting animals in public places and transport.
+            </p>
+
+            <figure>
+                <img id="imgtable" src="images/pet_ownership_in_australia_table.png" alt="Pet Ownership in Australia Table">
+                <figcaption>
+                    Fig 1. Comparison of Pet Ownership in 2019 and 2021. 
+                    Data Source: <a href="https://animalmedicinesaustralia.org.au/wp-content/uploads/2021/08/AMAU005-PATP-Report21_v1.41_WEB.pdf" target="_blank">
+                    Medicines Australia Report</a>
+                </figcaption>
+                <div class="pet-images">
+                    <img class="pet" src="images/cat.jpg" alt="Cat">
+                    <img class="pet" src="images/dog.png" alt="Dog">
+                    <img class="pet" src="images/fish.jpg" alt="Fish">
+                </div>
+            </figure>
+
+        </article>
+
+        <footer>
+            <p>COS30045 Data Visualisation</p>
+            <p>&#169; Swinburne University of Technology</p>
+            <p>Week 1</p>
+        </footer>
+    </section>
+    <script src="scripts/toggle.js"></script>
+</body>
+
+</html>

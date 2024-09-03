@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data Visualisation Lab 2.2">
+    <meta name="keywords" content="HTML, CSS, D3">
+    <meta name="author" content="Mohamed Usaidh Abdul Razzaq">
+
+    <title>Lab 2.2 D3 Drawing with Data - Bar Chart</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <link href="styles/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <h1>D3 Drawing with Data - Bar Chart</h1>
+
+        <nav>
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="lab2.1.html" class="menu-item">Lab 2.1</a>
+            <a href="lab2.2.html" class="menu-item">Lab 2.2</a>
+            <a href="lab2.3.html" class="menu-item">Lab 2.3</a>
+            <a href="lab2.4.html" class="menu-item">Lab 2.4</a>
+            <label class="switch">
+                <input class="pristine" type="checkbox" name="toggle" value="on">
+                <span class="slider"></span>
+                    <span class="label label-light">L</span>
+                    <span class="label label-dark">D</span>
+            </label>
+        </nav>
+
+    </header>
+
+    <script>
+
+        var w = 500;
+        var h = 100;
+        var barPadding = 3
+
+        var dataset = [14, 5, 16, 21, 9, 10, 18, 3, 7, 13];
+
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h)
+                    .attr("fill", "rgb(106, 90, 205)");
+
+        svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x", function(d, i) {
+                return i * (w / dataset.length);
+            })
+            .attr("y", function(d){
+                    return h - (d*4)
+            })
+            .attr("width", function(d){
+                return (w / dataset.length-barPadding);
+            })
+            .attr("height", function(d){
+                return d*4;
+            });
+
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function(d) {
+                return d;
+            })
+            .attr("fill", "black")
+            .attr("x", function(d, i) {
+                return i * (w / dataset.length) + 16;
+            })
+            .attr("y", function(d) {
+                return h - (d*4)
+            });
+
+    </script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <footer>
+        <p>COS30045 Data Visualisation</p>
+        <p>&#169; Swinburne University of Technology</p>
+        <p>Mohamed Usaidh Abdul Razzaq - 105017157</p>
+    </footer>
+
+    <script src="scripts/toggle.js"></script>
+
+</body>
+</html>

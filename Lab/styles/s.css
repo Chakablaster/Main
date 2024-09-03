@@ -1,0 +1,445 @@
+/*
+filename: stylesheet.css
+author: Mohamed Usaidh Abdul Razzaq
+created: 20/08/2024
+last modified: 27/08/2024
+description: Updated styles for improved design
+*/
+
+/* General Styles */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f5f5f5; /* Light text for better readability on dark background */
+    background-color: #1B4332; /* Darker background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 18px; /* Increased font size */
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #004B23, #006400, #007200, #008000, #38B000, #53a303, #8ece26, #b6e232);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #9afab2; /* Green accent border */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.text span {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    display: inline-block;
+    animation: animate 5s ;
+    animation-iteration-count: 2;
+    animation-delay: calc(0.2s * var(--delay));
+}
+
+@keyframes  animate {
+    0%, 80% {
+      transform: rotateY(360deg);
+    }
+  }
+
+/* Navigation */
+nav {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #f5f5f5; /* Light text color */
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #03427e; /* Darker background on hover */
+    color: #9afab2; /* Light green text on hover */
+    transform: scale(1.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item:focus {
+    outline: 3px solid #9afab2; /* Yellow focus ring */
+    background-color: #03427e; /* Consistent hover color */
+}
+
+/* Article */
+article {
+    padding: 20px;
+    background-color: #04200f; /* Slightly lighter background for the article */
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px; /* Center the content */
+}
+
+/* Figure */
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #9ecbd1; /* Darker border for images */
+}
+
+#imgtable {
+    width: 70%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#imgtable:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Figcaption */
+figcaption {
+    font-size: 1em;
+    color: #ecf0f1; /* Light color for captions */
+    margin-top: 10px;
+}
+
+/* Highlight List */
+.highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.highlight-list li {
+    background: #01813b; /* Highlight color */
+    color: #fff; /* White text */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Pet Images */
+.pet-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pet {
+    width: 20%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #004B23, #006400, #007200, #008000, #38B000, #53a303, #8ece26, #b6e232);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 4px solid #34c759; /* Accent color */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #cdeb24;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Button Container */
+#button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+button {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    transform: scale(1.3);
+}
+
+button:focus {
+    outline: 3px solid #34c759;
+}
+
+/* Image Container */
+#image-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#image-container img:hover,
+#image-container img:focus {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #03f8af;
+}
+
+/* Toggle switch styles */
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0ee98e;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+/* Labels inside the toggle switch */
+.label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+}
+
+/* Dark mode label */
+.label-dark {
+    left: 10px;
+}
+
+/* Light mode label */
+.label-light {
+    right: 10px;
+}
+
+/* Toggle switch styles for dark mode */
+input:checked + .slider {
+    background-color: #e43e0b;
+}
+
+input:checked + .slider:before {
+    transform: translateX(66px); /* Adjust position based on width */
+}
+
+/* Adjust label colors for dark and light modes */
+input:checked + .slider .label-dark {
+    color: #fff;
+}
+
+input:not(:checked) + .slider .label-light {
+    color: #fff;
+}
+
+input:checked + .slider {
+    background-color: #e43e0b;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f7b267;
+    color: #ffffff;
+}
+
+body.light-mode header {
+    background: linear-gradient(45deg, #FF7B00, #FFB700, #FF8800, #FFC300);    
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-bottom: 4px solid #780116; /* Green accent border */
+}
+
+body.light-mode nav {
+    background: linear-gradient(45deg, #F7B538, #DB7C26, #D8572A, #f55625);    
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+}
+
+body.light-mode .menu-item {
+    color: #f1f4f7;
+}
+
+body.light-mode .menu-item:hover {
+    background-color: #FFEA00; /* Lighter background on hover */
+    color: #5f0f40; /* Darker text color on hover */
+}
+
+body.light-mode .highlight-list li {
+    background: #470107;
+    color: #ffffff;
+}
+
+body.light-mode article {
+    background-color: #e09509;
+}
+
+body.light-mode footer {
+    background: linear-gradient(45deg, #FF7B00, #FFB700, #FF8800, #FFC300);    
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-top: 4px solid #780116; /* Accent color */
+}
+
+body.light-mode figcaption {
+    color: #5f0f40  ;
+}
+
+/* Responsive Navigation Menu */
+nav {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Responsive Image in Figure */
+#imgtable {
+    width: 70%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #imgtable {
+        width: 100%;
+    }
+}
+
+/* Responsive Pet Images */
+.pet-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pet {
+    width: 20%;
+}
+
+@media (max-width: 768px) {
+    .pet {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pet {
+        width: 100%;
+    }
+}

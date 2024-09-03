@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Lab 1.2 Page"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript"/>
+    <meta name="author" content="Mohamed Usaidh Abdul Razzaq"/>
+
+    <title>Lab 1.2 JavaScript Demo Page</title>
+    <link href="styles/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Lab 1.2 JavaScript Demo Page</h1>
+        <nav>
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="lab1.1.html" class="menu-item">Lab 1.1</a>
+            <a href="lab1.2.html" class="menu-item">Lab 1.2</a>
+            <a href="lab1.3.html" class="menu-item">Lab 1.3</a>
+            <label class="switch">
+                <input class="pristine" type="checkbox" name="toggle" value="on">
+                <span class="slider"></span>
+                    <span class="label label-light">L</span>
+                    <span class="label label-dark">D</span>
+            </label>
+        </nav>
+    </header>
+
+    <section id="lab1.2">
+        <article>
+            <header>
+                <h2>Pet Ownership in Australia</h2>
+            </header>
+
+            <p>
+                This interactive visualization allows you to explore pet ownership trends across different years. 
+                The visualizations provide insights into how pet ownership patterns have evolved over time, 
+                including increases or decreases in various types of pets and changes in ownership trends. 
+            </p>
+
+            <div id="button-container">
+                <button onclick="showImage('both')">Both</button>
+                <button onclick="showImage('2019')">2019</button>
+                <button onclick="showImage('2021')">2021</button>
+            </div>
+
+            <div id="image-container">
+                <img id="both" src="images/2019 and 2021.png" alt="Both">
+                <img id="2019" src="images/2019.png" alt="2019">
+                <img id="2021" src="images/2021.png" alt="2021">
+            </div>
+
+        </article>
+
+        <footer>
+            <p>COS30045 Data Visualisation</p>
+            <p>&#169; Swinburne University of Technology</p>
+            <p>Week 1</p>
+        </footer>
+    </section>
+
+    <script>
+        function showImage(type) {
+            const images = document.querySelectorAll('#image-container img');
+            images.forEach(img => img.style.display = 'none');
+            const selectedImage = document.getElementById(type);
+            if (selectedImage) {
+                selectedImage.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showImage('both');
+        });
+    </script>
+    <script src="scripts/toggle.js"></script>
+</body>
+
+</html>

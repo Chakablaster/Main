@@ -1,0 +1,860 @@
+/* 
+filename: mainstyle.css
+author: Mohamed Usaidh Abdul Razzaq
+created: 24/08/2024
+modified: 29/08/2024
+description: Styles specific to the main directory page
+*/
+
+/* Landing Screen Styles */
+#landing-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #004B23, #029e31, #008000, #70E000, #9EF01A, #CCFF33);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it covers other content */
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.landing-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.landing-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#enter-btn {
+    background-color: #52B788; /* Accent color */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+#enter-btn:hover {
+    background-color: #2D6A4F; /* Darker green on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #f7f8f8;
+}
+
+/* Animation for hiding */
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+/* Animation for fading out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Transition styles for when the button is clicked */
+body.landing-hidden #landing-screen {
+    animation: fadeOut 1s ease forwards;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.landing-content h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid #40916C; /* Cursor */
+    animation: typing 2s steps(40, end) 1s 1 normal both;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#enter-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Base dark mode styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f5f5f5; /* Light text for readability on a dark background */
+    background-color: #1B4332; /* Darker background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #004B23, #006400, #007200, #008000, #38B000, #53a303, #8ece26, #b6e232);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #9afab2; /* Green accent border */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.text span {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    display: inline-block;
+    animation: animate 5s ;
+    animation-iteration-count: 2;
+    animation-delay: calc(0.2s * var(--delay));
+}
+  
+  @keyframes  animate {
+    0%, 80% {
+      transform: rotateY(360deg);
+    }
+  }
+
+/* Navigation */
+nav {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #f5f5f5; /* Light text color */
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #03427e; /* Darker background on hover */
+    color: #9afab2; /* Light green text on hover */
+    transform: scale(1.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item:focus {
+    outline: 3px solid #9afab2; /* Yellow focus ring */
+    background-color: #03427e; /* Consistent hover color */
+}
+
+footer {
+    background: linear-gradient(45deg, #004B23, #006400, #007200, #008000, #38B000, #53a303, #8ece26, #b6e232);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 4px solid #9afab2; /* Accent color */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}   
+
+:root {
+	--cards: 8;
+	--cardHeight: 48vh;
+	--cardTopPadding: 1.5em;
+	--cardMargin: 4vw;
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+	--index: 1;
+}
+#card2 {
+	--index: 2;
+}
+#card3 {
+	--index: 3;
+}
+#card4 {
+	--index: 4;
+}
+#card5 {
+	--index: 5;
+}
+#card6 {
+	--index: 6;
+}
+#card7 {
+	--index: 7;
+}
+#card8 {
+	--index: 8;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--cardTopPadding));
+}
+
+#card1 .card-body {
+    background: linear-gradient(45deg, #36a76a, #0b5f32, #217548, #004B23);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card2 .card-body {
+    background: linear-gradient(45deg, #5a991b, #64bd0b, #488a06, #2f530a);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card3 .card-body {
+    background: linear-gradient(45deg, #007200, #094109, #2e9b2e, #125512);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card4 .card-body {
+    background: linear-gradient(45deg, #CCFF33, #9fc432, #6f8a1e, #87b109);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card5 .card-body {
+    background: linear-gradient(45deg, #38B000, #4ebe1a, #378015, #5a9b3b);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card6 .card-body {
+    background: linear-gradient(45deg, #006400, #37af37, #2f742f, #18ac18);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card7 .card-body {
+    background: linear-gradient(45deg, #9EF01A, #3f6306, #78a82b, #b6f058);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+#card8 .card-body {
+    background: linear-gradient(45deg, #008000, #4fac4f, #195a19, #24dd24);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+
+.card-body {
+	box-sizing: border-box;
+	padding: 30px;
+	border-radius: 50px;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+	height: var(--cardHeight);
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s;
+    text-align: center;
+    overflow: hidden; /* Prevent overflow of child elements */
+}
+
+#navcard {
+    width: 50%;
+    display:inline-block ;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the navcard */
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+
+/* Toggle switch styles */
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;    
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0ee98e;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+}
+
+/* Labels inside the toggle switch */
+.label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+}
+
+/* Dark mode label */
+.label-dark {
+    left: 10px;
+}
+
+/* Light mode label */
+.label-light {
+    right: 10px;
+}
+
+/* Toggle switch styles for dark mode */
+input:checked + .slider {
+    background-color: #e43e0b;
+}
+
+input:checked + .slider:before {
+    transform: translateX(66px); /* Adjust position based on width */
+}
+
+/* Adjust label colors for dark and light modes */
+input:checked + .slider .label-dark {
+    color: #fff;
+}
+
+input:not(:checked) + .slider .label-light {
+    color: #fff;
+}
+input:checked + .slider {
+    background-color: #e43e0b;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Light mode styles */
+body.light-mode #landing-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF7B00, #FFB700, #FF8800, #FFC300, #FF9500, #FFD000, #FFA200, #FFAA00);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it covers other content */
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+body.light-mode .landing-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+body.light-mode .landing-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+body.light-mode #enter-btn {
+    background-color: #f4845f; /* Accent color */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode #enter-btn:hover {
+    background-color: #f25c54; /* Darker green on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    outline: 2px solid #f7f8f8;
+}
+
+/* Animation for hiding */
+body.light-mode .fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+/* Animation for fading out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Transition styles for when the button is clicked in light mode */
+body.light-mode.landing-hidden #landing-screen {
+    animation: fadeOut 1s ease forwards;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+body.light-mode .landing-content h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid #f27059; /* Cursor */
+    animation: typing 2s steps(40, end) 1s 1 normal both;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+body.light-mode #enter-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+body.light-mode {
+    background-color: #f7b267;
+    color: #ffffff;
+}
+
+body.light-mode header {
+    background: linear-gradient(45deg, #FF7B00, #FFB700, #FF8800, #FFC300);    
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-bottom: 4px solid #780116; /* Green accent border */
+
+    
+}
+
+body.light-mode nav {
+    background: linear-gradient(45deg, #F7B538, #DB7C26, #D8572A, #f55625);    
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+}
+
+body.light-mode .menu-item {
+    color: #ffffff; /* Darker text color for light mode */
+}
+
+body.light-mode .menu-item:hover {
+    background-color: #FFEA00; /* Lighter background on hover */
+    color: #5f0f40; /* Darker text color on hover */
+}
+
+body.light-mode footer {
+    background: linear-gradient(45deg, #FF7B00, #FFB700, #FF8800, #FFC300);    
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-top: 4px solid #780116; /* Accent color */
+
+}
+
+body.light-mode #card1 .card-body  {
+    background: linear-gradient(45deg, #FF7B00, #d16e11, #cf953d, #b85b05);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card2 .card-body {
+    background: linear-gradient(45deg, #FFC300, #dfb016, #eed070, #c5a746);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card3 .card-body {
+    background: linear-gradient(45deg, #FF9500, #f59f28, #bb6f05, #bb8437);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card4 .card-body {
+    background: linear-gradient(45deg, #ddc421, #FFDD00, #ccb30d, #f7e363);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card5 .card-body {
+    background: linear-gradient(45deg, #FFA200, #c98c24, #be7902, #a78141);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card6 .card-body {
+    background: linear-gradient(45deg, #FFB700, #daa92e, #ca9309, #f3cd6e);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card7 .card-body {
+    background: linear-gradient(45deg, #FF8800, #bd6706, #bb6c11, #d68b36);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+body.light-mode #card8 .card-body {
+    background: linear-gradient(45deg, #FFAA00, #d49008, #cc9423, #e4bf75);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;}
+
+
+/* Styles for screens wider than 1440px (27-inch screens) */
+@media screen and (min-width: 1440px) {
+    .landing-content h1 {
+        font-size: 4em;
+    }
+
+    .landing-content p {
+        font-size: 1.5em;
+    }
+
+    #enter-btn {
+        padding: 15px 30px;
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+}
+
+
+/* Medium Devices (Tablets, Small Laptops) */
+@media screen and (max-width: 1200px) {
+    #landing-screen {
+        font-size: 1.8em;
+        padding: 10px;
+    }
+    .landing-content h1 {
+        font-size: 2.2em;
+    }
+    .landing-content p {
+        font-size: 1.1em;
+    }
+    #enter-btn {
+        font-size: 1.1em;
+        padding: 8px 18px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    .menu-item {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    footer p {
+        font-size: 14px;
+    }
+    .card-body {
+        padding: 25px;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    .switch {
+        width: 50px;
+        height: 28px;
+    }
+    .slider:before {
+        height: 22px;
+        width: 22px;
+    }
+}
+
+/* Small Devices (Large Phones, Small Tablets) */
+@media screen and (max-width: 992px) {
+    #landing-screen {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+    .landing-content h1 {
+        font-size: 2em;
+    }
+    .landing-content p {
+        font-size: 1em;
+    }
+    #enter-btn {
+        font-size: 1em;
+        padding: 6px 16px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    .menu-item {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    footer p {
+        font-size: 13px;
+    }
+    .card-body {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .switch {
+        width: 45px;
+        height: 26px;
+    }
+    .slider:before {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/* Extra Small Devices (Phones) */
+@media screen and (max-width: 768px) {
+    #landing-screen {
+        font-size: 1.2em;
+        padding: 6px;
+    }
+    .landing-content h1 {
+        font-size: 1.8em;
+    }
+    .landing-content p {
+        font-size: 0.9em;
+    }
+    #enter-btn {
+        font-size: 0.9em;
+        padding: 5px 14px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .menu-item {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    .card-body {
+        padding: 18px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .switch {
+        width: 40px;
+        height: 24px;
+    }
+    .slider:before {
+        height: 18px;
+        width: 18px;
+    }
+}
+
+/* Very Small Devices (Small Phones, Portrait Mode) */
+@media screen and (max-width: 576px) {
+    #landing-screen {
+        font-size: 1em;
+        padding: 4px;
+    }
+    .landing-content h1 {
+        font-size: 1.5em;
+    }
+    .landing-content p {
+        font-size: 0.8em;
+    }
+    #enter-btn {
+        font-size: 0.8em;
+        padding: 4px 12px;
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    .menu-item {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+    footer p {
+        font-size: 11px;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .switch {
+        width: 35px;
+        height: 22px;
+    }
+    .slider:before {
+        height: 16px;
+        width: 16px;
+    }
+}
+
+/* Extra Small Devices (Small Phones, Portrait Mode, Older Devices) */
+@media screen and (max-width: 400px) {
+    #landing-screen {
+        font-size: 0.9em;
+        padding: 3px;
+    }
+    .landing-content h1 {
+        font-size: 1.2em;
+    }
+    .landing-content p {
+        font-size: 0.7em;
+    }
+    #enter-btn {
+        font-size: 0.7em;
+        padding: 3px 10px;
+    }
+    header h1 {
+        font-size: 1em;
+    }
+    .menu-item {
+        font-size: 11px;
+        padding: 3px 5px;
+    }
+    footer p {
+        font-size: 10px;
+    }
+    .card-body {
+        padding: 12px;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .switch {
+        width: 30px;
+        height: 20px;
+    }
+    .slider:before {
+        height: 14px;
+        width: 14px;
+    }
+}
+

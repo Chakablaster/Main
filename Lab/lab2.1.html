@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Data Visualisation Lab 2.1">
+    <meta name="keywords" content="HTML, CSS, D3">
+    <meta name="author" content="Mohamed Usaidh Abdul Razzaq">
+
+    <title>Lab 2.1 D3 Drawing with Data - Binding</title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <link href="styles/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <h1>The D3 Journey starts here...</h1>
+
+        <nav>
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="lab2.1.html" class="menu-item">Lab 2.1</a>
+            <a href="lab2.2.html" class="menu-item">Lab 2.2</a>
+            <a href="lab2.3.html" class="menu-item">Lab 2.3</a>
+            <a href="lab2.4.html" class="menu-item">Lab 2.4</a>
+            <label class="switch">
+                <input class="pristine" type="checkbox" name="toggle" value="on">
+                <span class="slider"></span>
+                    <span class="label label-light">L</span>
+                    <span class="label label-dark">D</span>
+            </label>
+        </nav>
+
+    </header>
+
+    <script>
+
+        var dataset = [14, 5, 26, 23, 9];
+        var color1=d3.color("red")
+
+        d3.select("body").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .style("color",function(d){
+                if(d>10){
+                    return "red"
+                }
+            })
+            .text(function(d)
+            {
+                if (d > 10){
+                    return "Warning: Mo watched " + d + " cat videos today.";
+                }
+                else{
+                    return "Mo watched " + d + " cat videos today.";
+                }
+            });
+
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <p>COS30045 Data Visualisation</p>
+        <p>&#169; Swinburne University of Technology</p>
+        <p>Week 2</p>
+    </footer>
+
+    <script src="scripts/toggle.js"></script>
+
+</body>
+</html>
