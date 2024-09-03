@@ -35,7 +35,7 @@ function init() {
             return (w/wombatSightings.length-barPadding);
         })
         .attr("height",function(d){
-            return d.wombats*4;
+            return d.wombats*10;
         })
         //colour of the bar changes depending on the value of the data
         .attr("fill", function(d) {
@@ -54,7 +54,7 @@ function init() {
             return i * (w / wombatSightings.length) +10.5;
         })
         .attr("y",function(d){
-            return h - (d.wombats *4)
+            return h - (d.wombats *3)
         })
     }
 }
