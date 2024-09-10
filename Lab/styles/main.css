@@ -2,7 +2,7 @@
 filename: mainstyle.css
 author: Mohamed Usaidh Abdul Razzaq
 created: 24/08/2024
-modified: 29/08/2024
+modified: 10/09/2024
 description: Styles specific to the main directory page
 */
 
@@ -148,7 +148,8 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    background-size: 400% 400%;
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
+    background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;
     color: #fff; /* White text */
     padding: 20px;
@@ -199,7 +200,7 @@ nav {
 }
 
 .menu-item:hover {
-    background-color: #03427e; /* Darker background on hover */
+    background-color: #0e946c; /* Darker background on hover */
     color: #9afab2; /* Light green text on hover */
     transform: scale(1.3);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
@@ -207,7 +208,7 @@ nav {
 
 .menu-item:focus {
     outline: 3px solid #9afab2; /* Yellow focus ring */
-    background-color: #03427e; /* Consistent hover color */
+    background-color: #0e946c; /* Consistent hover color */
 }
 
 footer {
@@ -364,7 +365,7 @@ h2 {
     bottom: 0;
     background-color: #0ee98e;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 38px;
 }
 
 .slider:before {
@@ -402,7 +403,7 @@ h2 {
 
 /* Toggle switch styles for dark mode */
 input:checked + .slider {
-    background-color: #e43e0b;
+    background-color: #1B7CA5;
 }
 
 input:checked + .slider:before {
@@ -418,11 +419,11 @@ input:not(:checked) + .slider .label-light {
     color: #fff;
 }
 input:checked + .slider {
-    background-color: #e43e0b;
+    background-color: #1B7CA5;
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(20px);
 }
 
 /* Light mode styles */
@@ -432,7 +433,7 @@ body.light-mode #landing-screen {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #F9B16E, #F9A971, #F8A174, #F89977, #F7907A, #F7887D, #F68080);
+    background: linear-gradient(45deg, #07C8F9, #08B2F5, #099BF1, #0A85ED, #0B6EE9, #0C58E5, #0D41E1);    
     background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;    color: #fff;
     display: flex;
@@ -469,7 +470,7 @@ body.light-mode .landing-content p {
 }
 
 body.light-mode #enter-btn {
-    background-color: #f4845f; /* Accent color */
+    background-color: #28B8D5; /* Accent color */
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -480,7 +481,7 @@ body.light-mode #enter-btn {
 }
 
 body.light-mode #enter-btn:hover {
-    background-color: #f25c54; /* Darker green on hover */
+    background-color: #020344; /* Darker green on hover */
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     outline: 2px solid #f7f8f8;
@@ -518,7 +519,7 @@ body.light-mode.landing-hidden #landing-screen {
 body.light-mode .landing-content h1 {
     overflow: hidden;
     white-space: nowrap;
-    border-right: .15em solid #f27059; /* Cursor */
+    border-right: .15em solid #020344; /* Cursor */
     animation: typing 2s steps(40, end) 1s 1 normal both;
 }
 
@@ -554,22 +555,22 @@ body.light-mode #enter-btn {
 }
 
 body.light-mode {
-    background-color: #f1932f;
+    background-color: #28B8D5;
     color: #ffffff;
 }
 
 body.light-mode header {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);
-        background-size: 400% 400%;    background-size: 400% 400%;
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);
+    background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;
     color: #ffffff;
-    border-bottom: 4px solid #780116; /* Green accent border */
+    border-bottom: 4px solid #020344; /* Green accent border */
 
     
 }
 
 body.light-mode nav {
-    background: linear-gradient(45deg, #F9B16E, #F9A971, #F8A174, #F89977, #F7907A, #F7887D, #F68080);    
+    background: linear-gradient(45deg, #07C8F9, #08B2F5, #099BF1, #0A85ED, #0B6EE9, #0C58E5, #0D41E1);    
     background-size: 400% 400%;
     animation: gradientMove 6s ease infinite;
 }
@@ -579,49 +580,49 @@ body.light-mode .menu-item {
 }
 
 body.light-mode .menu-item:hover {
-    background-color: #FFEA00; /* Lighter background on hover */
-    color: #5f0f40; /* Darker text color on hover */
+    background-color: #28B8D5; /* Lighter background on hover */
+    color: #020344; /* Darker text color on hover */
 }
 
 body.light-mode footer {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;
     color: #ffffff;
-    border-top: 4px solid #780116; /* Accent color */
+    border-top: 4px solid #020344; /* Accent color */
 
 }
 
 body.light-mode #card1 .card-body  {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card2 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card3 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card4 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card5 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card6 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card7 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 body.light-mode #card8 .card-body {
-    background: linear-gradient(45deg, #F9C823, #FAB430, #FAA03C, #FB8C49, #FB7855, #FC6462, #FC506E);    
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);    
     background-size: 400% 400%;
     animation: gradientMove 8s ease infinite;}
 
@@ -648,9 +649,9 @@ body.light-mode #card8 .card-body {
 
 
 /* Medium Devices (Tablets, Small Laptops) */
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
     #landing-screen {
-        font-size: 1.8em;
+        font-size: 1em;
         padding: 10px;
     }
     .landing-content h1 {
@@ -664,6 +665,7 @@ body.light-mode #card8 .card-body {
         padding: 8px 18px;
     }
     header h1 {
+        font-size: 90%;
         font-size: 2em;
     }
     .menu-item {

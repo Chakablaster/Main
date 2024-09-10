@@ -2,7 +2,7 @@
 filename: stylesheet.css
 author: Mohamed Usaidh Abdul Razzaq
 created: 20/08/2024
-last modified: 27/08/2024
+modified: 10/09/2024
 description: Updated styles for improved design
 */
 
@@ -11,9 +11,11 @@ description: Updated styles for improved design
     0% {
         background-position: 0% 0%;
     }
+
     50% {
         background-position: 100% 100%;
     }
+
     100% {
         background-position: 0% 0%;
     }
@@ -27,23 +29,28 @@ description: Updated styles for improved design
 
 body {
     font-family: 'Arial', sans-serif;
-    color: #f5f5f5; /* Light text for better readability on dark background */
-    background-color: #2c3e50; /* Dark background */
+    color: #f5f5f5;
+    /* Light text for better readability on dark background */
+    background-color: #1B4332;
+    /* Darker background */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
+    /* Increased font size */
 }
 
 /* Header */
 header {
-    background: linear-gradient(45deg, #5b8ed1, #1e466d, #5b8ed1, #1e466d);
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-    color: #fff; /* White text */
+    animation: gradientMove 5s ease infinite;
+    color: #fff;
+    /* White text */
     padding: 20px;
     text-align: center;
-    border-bottom: 4px solid #34c759; /* Green accent border */
+    border-bottom: 4px solid #9afab2;
+    /* Green accent border */
 }
 
 header h1 {
@@ -51,18 +58,38 @@ header h1 {
     margin: 0;
 }
 
+.text span {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    display: inline-block;
+    animation: animate 5s;
+    animation-iteration-count: 2;
+    animation-delay: calc(0.2s * var(--delay));
+}
+
+@keyframes animate {
+
+    0%,
+    80% {
+        transform: rotateY(360deg);
+    }
+}
+
 /* Navigation */
 nav {
-    background: linear-gradient(45deg, #5b8ed1, #1e466d, #5b8ed1, #1e466d);
+    background: linear-gradient(45deg, #1C3E35, #315C4F, #6FB69D, #84D4B7, #467A69, #5B9883);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradientMove 6s ease infinite;
     padding: 15px;
     text-align: center;
 }
 
 .menu-item {
     text-decoration: none;
-    color: #f5f5f5; /* Light text color */
+    color: #f5f5f5;
+    /* Light text color */
     padding: 10px 15px;
     display: inline-block;
     font-size: 18px;
@@ -71,25 +98,31 @@ nav {
 }
 
 .menu-item:hover {
-    background-color: #03427e; /* Darker background on hover */
-    color: #70f780; 
+    background-color: #0e946c;
+    /* Darker background on hover */
+    color: #9afab2;
+    /* Light green text on hover */
     transform: scale(1.3);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .menu-item:focus {
-    outline: 3px solid #ffeb3b; /* Yellow focus ring */
-    background-color: #03427e; /* Consistent hover color */
+    outline: 3px solid #9afab2;
+    /* Yellow focus ring */
+    background-color: #0e946c;
+    /* Consistent hover color */
 }
 
 /* Article */
 article {
     padding: 20px;
-    background-color: #69829b; /* Slightly lighter background for the article */
+    background-color: #047732;
+    /* Slightly lighter background for the article */
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 800px; /* Center the content */
+    max-width: 800px;
+    /* Center the content */
 }
 
 /* Figure */
@@ -102,7 +135,8 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 3px solid #9ecbd1; /* Darker border for images */
+    border: 3px solid #9afab2;
+    /* Darker border for images */
 }
 
 #imgtable {
@@ -119,7 +153,8 @@ img {
 /* Figcaption */
 figcaption {
     font-size: 1em;
-    color: #ecf0f1; /* Light color for captions */
+    color: #ecf0f1;
+    /* Light color for captions */
     margin-top: 10px;
 }
 
@@ -131,8 +166,10 @@ figcaption {
 }
 
 .highlight-list li {
-    background: #7db2f6; /* Highlight color */
-    color: #fff; /* White text */
+    background: #01813b;
+    /* Highlight color */
+    color: #fff;
+    /* White text */
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -158,22 +195,20 @@ figcaption {
 
 /* Footer */
 footer {
-    background: linear-gradient(45deg, #5b8ed1, #1e466d, #5b8ed1, #1e466d);
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;    color: #fff;
+    animation: gradientMove 5s ease infinite;
+    color: #fff;
     text-align: center;
     padding: 30px;
     margin-top: 30px;
-    border-top: 4px solid #34c759; /* Accent color */
+    border-top: 4px solid #9afab2;
+    /* Accent color */
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
-}
-
-footer a:hover {
-    color: #34c759;
 }
 
 footer p {
@@ -188,9 +223,9 @@ footer p {
 }
 
 button {
-    background: linear-gradient(45deg, #5b8ed1, #1e466d, #5b8ed1, #1e466d);
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradientMove 6s ease infinite;
     color: #fff;
     border: none;
     padding: 12px 25px;
@@ -203,7 +238,7 @@ button {
 
 button:hover,
 button:focus {
-    background: linear-gradient(45deg, #5b8ed1, #1e466d, #5b8ed1, #1e466d);
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
     transform: scale(1.3);
@@ -231,7 +266,7 @@ button:focus {
 #image-container img:focus {
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    outline: 2px solid #34c759;
+    outline: 2px solid #03f8af;
 }
 
 /* Toggle switch styles */
@@ -257,7 +292,7 @@ button:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #0ee98e;
     transition: .4s;
     border-radius: 34px;
 }
@@ -272,14 +307,6 @@ button:focus {
     bottom: 4px;
     background-color: white;
     transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
 }
 
 /* Labels inside the toggle switch */
@@ -304,46 +331,51 @@ input:checked + .slider:before {
 }
 
 /* Toggle switch styles for dark mode */
-input:checked + .slider {
-    background-color: #2196F3;
+input:checked+.slider {
+    background-color: #1B7CA5;
 }
 
-input:checked + .slider:before {
-    transform: translateX(66px); /* Adjust position based on width */
+input:checked+.slider:before {
+    transform: translateX(66px);
+    /* Adjust position based on width */
 }
 
 /* Adjust label colors for dark and light modes */
-input:checked + .slider .label-dark {
+input:checked+.slider .label-dark {
     color: #fff;
 }
 
-input:not(:checked) + .slider .label-light {
+input:not(:checked)+.slider .label-light {
     color: #fff;
 }
-input:checked + .slider {
-    background-color: #2196F3;
+
+input:checked+.slider {
+    background-color: #1B7CA5;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
 }
 
 /* Light mode styles */
 body.light-mode {
-    background-color: #c5d5e4;
-    color: #2c3e50;
+    background-color: #28B8D5;
+    color: #ffffff;
 }
 
 body.light-mode header {
-    background: linear-gradient(45deg, #9dc2e7, #34495e, #9dc2e7, #34495e);
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-bottom: 4px solid #020344;
+    /* Green accent border */
 }
 
 body.light-mode nav {
-    background: linear-gradient(45deg, #9dc2e7, #34495e, #9dc2e7, #34495e);
+    background: linear-gradient(45deg, #07C8F9, #08B2F5, #099BF1, #0A85ED, #0B6EE9, #0C58E5, #0D41E1);
     background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    animation: gradientMove 6s ease infinite;
 }
 
 body.light-mode .menu-item {
@@ -351,26 +383,62 @@ body.light-mode .menu-item {
 }
 
 body.light-mode .menu-item:hover {
-    background-color: #dbe1e8; /* Lighter background on hover */
-    color: #265686; /* Darker text color on hover */
+    background-color: #28B8D5;
+    /* Lighter background on hover */
+    color: #020344;
+    /* Darker text color on hover */
 }
 
 body.light-mode .highlight-list li {
-    background: #8aa9ce;
-    color: #2c3e50;
+    background: #020344;
+    color: #ffffff;
 }
 
 body.light-mode article {
-    background-color: #ddf2f3;
+    background-color: #04505f;
 }
 
 body.light-mode footer {
-    background-color: #dbe1e8;
-    color: #e8ebee;
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-top: 4px solid #020344;
+    /* Accent color */
+}
+
+body.light-mode img {
+    border: 3px solid #28B8D5
 }
 
 body.light-mode figcaption {
-    color: #2c3e50;
+    color: #020344;
+}
+
+body.light-mode button {
+    background: linear-gradient(45deg, #05668D, #028090, #00A896, #02C39A);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(45deg, #05668D, #028090, #00A896, #02C39A);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    transform: scale(1.3);
+}
+
+button:focus {
+    outline: 3px solid #05668D;
 }
 
 /* Responsive Navigation Menu */
