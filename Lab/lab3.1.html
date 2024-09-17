@@ -36,9 +36,9 @@
 
     <script>
 
-        var w = 600;
-        var h = 100;
-        var padding = 5;
+        var w = 1000;
+        var h = 600;
+        var padding = 80;
 
         var svg = d3.select("body")
                     .append("svg")
@@ -89,11 +89,14 @@
                 return d[0] + "," + d[1];
             })
             .attr("x", function(d) {
-                return d[0]+10;
+                return xScale(d[0]) + 10; 
             })
             .attr("y", function(d) {
-                return d[1];
-            });
+                return xScale(d[1]) - 13;
+            })
+            .attr("font-size", "16px")
+            .attr("fill", "white")
+            .attr("text-anchor", "start");
 
     </script>
 
