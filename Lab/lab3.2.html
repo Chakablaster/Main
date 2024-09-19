@@ -36,95 +36,113 @@
 
     <script>
 
+        // Set up width, height, and padding for the SVG container
         var w = 1000;
         var h = 600;
         var padding = 80;
 
+        // Create an SVG element and set its dimensions
         var svg = d3.select("body")
             .append("svg")
             .attr("width", w)
-            .attr("height", h)
+            .attr("height", h);
 
+        // Define the dataset for the scatterplot
         var dataset = [
-            [5, 20],
-            [480, 90],
-            [250, 50],
-            [100, 33],
-            [330, 95],
-            [410, 12],
-            [475, 44],
-            [25, 67],
-            [85, 21],
-            [220, 88]
+            [2, 8],
+            [3, 5],
+            [5, 17],
+            [6, 6],
+            [6, 12],
+            [7, 20],
+            [8, 22],
+            [10, 11],
+            [5, 12],
+            [6, 16]
         ];
 
+        // Set up the x-scale, ensuring the x-axis starts at 0
         var xScale = d3.scaleLinear()
-            .domain([d3.min(dataset, function (d) { return d[0]; }),
-            d3.max(dataset, function (d) { return d[0]; })])
-            .range([padding, w - padding]);
+            .domain([0, d3.max(dataset, function (d) { return d[0]; })]) // Ensure the x-axis starts from 0
+            .range([padding, w - padding]); // Map to SVG width
 
+        // Set up the y-scale, ensuring the y-axis starts at 0
         var yScale = d3.scaleLinear()
-            .domain([d3.min(dataset, function (d) { return d[0]; }),
-            d3.max(dataset, function (d) { return d[0]; })])
-            .range([h - padding, padding]);
+            .domain([0, d3.max(dataset, function (d) { return d[1]; })]) // Ensure the y-axis starts from 0
+            .range([h - padding, padding]); // Map to SVG height (reverse for correct orientation)
 
-    var xScale = d3.scaleLinear()
-        .domain([d3.min(dataset, function (d) { return d[0]; }),
-        d3.max(dataset, function (d) { return d[0]; })])
-        .range([padding, w - padding]);
+        // Create the x-axis with custom ticks and bind it to the x-scale
+        var xAxis = d3.axisBottom()
+            .ticks(8) // Set the number of ticks on the x-axis
+            .scale(xScale);
 
-    var yScale = d3.scaleLinear()
-        .domain([d3.min(dataset, function (d) { return d[1]; }),  
-        d3.max(dataset, function (d) { return d[1]; })])
-        .range([h - padding, padding]);  
+        // Create the y-axis with custom ticks and bind it to the y-scale
+        var yAxis = d3.axisLeft()
+            .ticks(8) // Set the number of ticks on the y-axis
+            .scale(yScale);
 
-    var xAxis = d3.axisBottom()
-        .ticks(7)
-        .scale(xScale);
+        // Plot the data points as circles
+        svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) {
+                return xScale(d[0]); // Set x-coordinate based on x-scale
+            })
+            .attr("cy", function (d) {
+                return yScale(d[1]); // Set y-coordinate based on y-scale
+            })
+            .attr("r", 5) // Set the radius of each circle
+            .attr("fill", "white"); // Color the circles
 
-    var yAxis = d3.axisLeft()
-        .ticks(5)
-        .scale(yScale);
+        // Add labels to the data points
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function (d) {
+                return d[0] + "," + d[1]; // Show the data values for each point
+            })
+            .attr("x", function (d) {
+                return xScale(d[0]) + 10; // Position the label to the right of the point
+            })
+            .attr("y", function (d) {
+                return yScale(d[1]) - 13; // Position the label slightly above the point
+            })
+            .attr("font-size", "16px") // Set the font size
+            .attr("fill", "white") // Set the text color
+            .attr("text-anchor", "start"); // Align the text to the start
 
-    svg.selectAll("circle")
-        .data(dataset)
-        .enter()
-        .append("circle")
-        .attr("cx", function (d, i) {
-            return xScale(d[0]);
-        })
-        .attr("cy", function (d) {
-            return yScale(d[1]);  
-        })
-        .attr("r", 5)
-        .attr("fill", "white");
+        // Append the x-axis to the SVG container
+        svg.append("g")
+            .attr("transform", "translate(0, " + (h - padding) + ")") // Move the axis to the bottom
+            .call(xAxis);
 
-    svg.selectAll("text")
-        .data(dataset)
-        .enter()
-        .append("text")
-        .text(function (d) {
-            return d[0] + "," + d[1];
-        })
-        .attr("x", function (d) {
-            return xScale(d[0]) + 10;
-        })
-        .attr("y", function (d) {
-            return yScale(d[1]) - 13;  
-        })
-        .attr("font-size", "16px")
-        .attr("fill", "white")
-        .attr("text-anchor", "start");
+        // Append the y-axis to the SVG container
+        svg.append("g")
+            .attr("transform", "translate(" + padding + ", 0)") // Move the axis to the left
+            .call(yAxis);
 
-    svg.append("g")
-        .attr("transform", "translate(0, " + (h - padding) + ")")
-        .call(xAxis);
+        // Add a label for the x-axis
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", w / 2)  // Position it at the middle of the x-axis
+            .attr("y", h - 40) // Position it slightly below the x-axis
+            .attr("font-size", "16px")
+            .attr("fill", "white")
+            .text("Tree Age (year)"); // Label text for x-axis
 
-    svg.append("g")
-        .attr("transform", "translate(" + padding + ", 0)")  
-        .call(yAxis);
+        // Add a label for the y-axis
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)") // Rotate to make it vertical
+            .attr("x", -(h / 2)) // Position it at the middle of the y-axis
+            .attr("y", 20)       // Position it slightly to the left of the y-axis
+            .attr("font-size", "16px")
+            .attr("fill", "white")
+            .text("Tree Height (m)"); // Label text for y-axis
 
-  
+
     </script>
 
 <br>
