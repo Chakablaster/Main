@@ -2,7 +2,7 @@
 filename: stylesheet.css
 author: Mohamed Usaidh Abdul Razzaq
 created: 20/08/2024
-modified: 10/09/2024
+modified: 26/09/2024
 description: Updated styles for improved design
 */
 
@@ -203,7 +203,6 @@ footer {
     padding: 30px;
     margin-top: 30px;
     border-top: 4px solid #9afab2;
-    /* Accent color */
 }
 
 footer a {
@@ -495,3 +494,4 @@ nav {
         width: 100%;
     }
 }
+

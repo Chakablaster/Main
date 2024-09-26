@@ -1,0 +1,364 @@
+/*
+filename: lab5style.css
+author: Mohamed Usaidh Abdul Razzaq
+created: 26/09/2024
+modified: 26/09/2024
+description: Updated styles for lab 5
+*/
+
+/* General Styles */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f5f5f5;
+    background-color: #1B4332;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #9afab2; /* Green accent border */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.text span {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    display: inline-block;
+    animation: animate 5s;
+    animation-iteration-count: 2;
+    animation-delay: calc(0.2s * var(--delay));
+}
+
+@keyframes animate {
+
+    0%,
+    80% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(45deg, #1C3E35, #315C4F, #6FB69D, #84D4B7, #467A69, #5B9883);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #f5f5f5;
+    /* Light text color */
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #0e946c;
+    /* Darker background on hover */
+    color: #9afab2;
+    /* Light green text on hover */
+    transform: scale(1.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item:focus {
+    outline: 3px solid #9afab2;
+    /* Yellow focus ring */
+    background-color: #0e946c;
+    /* Consistent hover color */
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 4px solid #9afab2;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Button Container */
+#button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+button {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(45deg, #006769, #40A578, #80cc6b, #9db355);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    transform: scale(1.3);
+}
+
+button:focus {
+    outline: 3px solid #34c759;
+}
+
+/* Toggle switch styles */
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0ee98e;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+/* Labels inside the toggle switch */
+.label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+}
+
+/* Dark mode label */
+.label-dark {
+    left: 10px;
+}
+
+/* Light mode label */
+.label-light {
+    right: 10px;
+}
+
+/* Toggle switch styles for dark mode */
+input:checked+.slider {
+    background-color: #1B7CA5;
+}
+
+input:checked+.slider:before {
+    transform: translateX(66px);
+    /* Adjust position based on width */
+}
+
+/* Adjust label colors for dark and light modes */
+input:checked+.slider .label-dark {
+    color: #fff;
+}
+
+input:not(:checked)+.slider .label-light {
+    color: #fff;
+}
+
+input:checked+.slider {
+    background-color: #1B7CA5;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+rect {
+    fill: var(--bar-color);
+    /* Use the CSS variable for the bar color */
+}
+
+:root {
+    --bar-color: #4caf50;
+    /* Default bar color for light mode */
+    --background-color: #ffffff;
+    --text-color: #ffffff;
+}
+
+body.light-mode {
+    --bar-color: #1c1fb6;
+    --text-color: #0a0a0a;
+}
+
+#updateButton {
+    display: block;
+    margin: 0 auto;/* This will center the button horizontally */
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #28B8D5;
+    color: #ffffff;
+}
+
+body.light-mode header {
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-bottom: 4px solid #020344;
+    /* Green accent border */
+}
+
+body.light-mode nav {
+    background: linear-gradient(45deg, #07C8F9, #08B2F5, #099BF1, #0A85ED, #0B6EE9, #0C58E5, #0D41E1);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+}
+
+body.light-mode .menu-item {
+    color: #f1f4f7;
+}
+
+body.light-mode .menu-item:hover {
+    background-color: #28B8D5;
+    /* Lighter background on hover */
+    color: #020344;
+    /* Darker text color on hover */
+}
+
+body.light-mode footer {
+    background: linear-gradient(45deg, #020344, #08215C, #0F3F74, #155E8D, #1B7CA5, #229ABD, #28B8D5);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    color: #ffffff;
+    border-top: 4px solid #020344;
+    /* Accent color */
+}
+body.light-mode button {
+    background: linear-gradient(45deg, #05668D, #028090, #00A896, #02C39A);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(45deg, #05668D, #028090, #00A896, #02C39A);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    transform: scale(1.3);
+}
+
+button:focus {
+    outline: 3px solid #05668D;
+}
+
+/* Responsive Navigation Menu */
+nav {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
