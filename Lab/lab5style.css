@@ -273,8 +273,17 @@ body.light-mode {
 }
 
 #updateButton {
-    display: block;
+    display:flex;
+    align-items: center;         /* Vertically center the buttons if needed */
     margin: 0 auto;/* This will center the button horizontally */
+    margin-bottom: 2;
+}
+
+#lab5-button-container {
+    display: flex;              /* Use flexbox to align items */
+    justify-content: center;     /* Center the buttons horizontally */
+    align-items: center;         /* Vertically center the buttons if needed */
+    margin: 30px 0;
 }
 
 /* Light mode styles */
