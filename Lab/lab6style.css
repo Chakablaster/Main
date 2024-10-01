@@ -3,7 +3,7 @@ filename: lab5style.css
 author: Mohamed Usaidh Abdul Razzaq
 created: 26/09/2024
 modified: 01/10/2024
-description: Updated styles for lab 5
+description: Updated styles for lab 6
 */
 
 /* General Styles */
@@ -42,10 +42,12 @@ header {
     background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
     background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;
-    color: #fff; /* White text */
+    color: #fff;
+    /* White text */
     padding: 20px;
     text-align: center;
-    border-bottom: 4px solid #9afab2; /* Green accent border */
+    border-bottom: 4px solid #9afab2;
+    /* Green accent border */
 }
 
 header h1 {
@@ -262,27 +264,51 @@ rect {
 
 :root {
     --bar-color: #4caf50;
-    /* Default bar color for light mode */
-    --background-color: #ffffff;
-    --text-color: #ffffff;
+    /* Default bar color (used in dark mode) */
+    --hover-color: yellow;
+    /* Default hover color in dark mode */
 }
 
 body.light-mode {
     --bar-color: #1c1fb6;
-    --text-color: #0a0a0a;
+    /* Bar color for light mode */
+    --hover-color: #d8b4e2;
+    /* Lilac color for light mode hover */
+}
+
+body.dark-mode {
+    --bar-color: #4caf50;
+    /* Bar color for dark mode */
+    --hover-color: yellow;
+    /* Yellow color for dark mode hover */
+}
+
+/* Apply the bar color */
+rect {
+    fill: var(--bar-color);
+}
+
+/* Apply the hover color */
+rect:hover {
+    fill: var(--hover-color);
 }
 
 #updateButton {
-    display:flex;
-    align-items: center;         /* Vertically center the buttons if needed */
-    margin: 0 auto;/* This will center the button horizontally */
+    display: flex;
+    align-items: center;
+    /* Vertically center the buttons if needed */
+    margin: 0 auto;
+    /* This will center the button horizontally */
     margin-bottom: 2;
 }
 
-#lab5-button-container {
-    display: flex;              /* Use flexbox to align items */
-    justify-content: center;     /* Center the buttons horizontally */
-    align-items: center;         /* Vertically center the buttons if needed */
+#lab6-button-container {
+    display: flex;
+    /* Use flexbox to align items */
+    justify-content: center;
+    /* Center the buttons horizontally */
+    align-items: center;
+    /* Vertically center the buttons if needed */
     margin: 30px 0;
 }
 
@@ -326,6 +352,7 @@ body.light-mode footer {
     border-top: 4px solid #020344;
     /* Accent color */
 }
+
 body.light-mode button {
     background: linear-gradient(45deg, #05668D, #028090, #00A896, #02C39A);
     background-size: 400% 400%;
@@ -370,4 +397,3 @@ nav {
         font-size: 16px;
     }
 }
-
