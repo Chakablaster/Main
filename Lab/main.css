@@ -227,112 +227,94 @@ footer p {
     font-size: 16px;
 }   
 
+/* Card Layout */
 :root {
-	--cards: 8;
-	--cardHeight: 48vh;
-	--cardTopPadding: 1.5em;
-	--cardMargin: 4vw;
+    --cards: 8;
+    --cardHeight: 48vh;
+    --cardTopPadding: 1.5em;
+    --cardMargin: 4vw;
 }
 
 .container {
-	width: 70%;
-	margin: 0 auto;
+    width: 70%;
+    margin: 0 auto;
 }
 
 #cards {
-	list-style: none;
-	padding-left: 0;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(var(--cards), var(--cardHeight));
-	gap: var(--cardMargin);
-	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
-	margin-bottom: var(--cardMargin);
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), var(--cardHeight));
+    gap: var(--cardMargin);
+    padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+    margin-bottom: var(--cardMargin);
 }
 
-#card1 {
-	--index: 1;
-}
-#card2 {
-	--index: 2;
-}
-#card3 {
-	--index: 3;
-}
-#card4 {
-	--index: 4;
-}
-#card5 {
-	--index: 5;
-}
-#card6 {
-	--index: 6;
-}
-#card7 {
-	--index: 7;
-}
-#card8 {
-	--index: 8;
-}
-
+/* Card Styles */
 .card {
-	position: sticky;
-	top: 0;
-	padding-top: calc(var(--index) * var(--cardTopPadding));
+    position: sticky;
+    top: 0;
+    padding-top: calc(var(--index) * var(--cardTopPadding));
+    z-index: 1;
+    /* Default z-index */
+    transition: z-index 0.3s ease;
+    /* Smooth z-index transition */
 }
 
-#card1 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card2 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card3 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card4 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card5 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card6 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card7 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
-#card8 .card-body {
-    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);    
-    background-size: 400% 400%;
-    animation: gradientMove 8s ease infinite;}
+.card:hover {
+    z-index: 10;
+    /* Increase z-index on hover */
+}
+
+.card:focus-within {
+    z-index: 10;
+    /* Increase z-index when card is focused */
+}
 
 .card-body {
-	box-sizing: border-box;
-	padding: 30px;
-	border-radius: 50px;
-	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
-	height: var(--cardHeight);
-	justify-content: center;
-	align-items: center;
-	transition: all 0.5s;
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    height: var(--cardHeight);
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    overflow: hidden; /* Prevent overflow of child elements */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-body {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+/* Card-specific backgrounds */
+#card1 .card-body,
+#card2 .card-body,
+#card3 .card-body,
+#card4 .card-body,
+#card5 .card-body,
+#card6 .card-body,
+#card7 .card-body,
+#card8 .card-body {
+    background: linear-gradient(45deg, #0B2C24, #0F392B, #1C603F, #206D46, #134632, #247A4D, #185339);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
 }
 
 #navcard {
     width: 50%;
-    display:inline-block ;
+    display: inline-block;
     border-radius: 10px;
-    margin: 0 auto; /* Center the navcard */
-    box-sizing: border-box; /* Include padding and border in the element's width and height */
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 h2 {
