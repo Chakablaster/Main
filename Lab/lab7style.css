@@ -337,3 +337,35 @@ nav {
         font-size: 16px;
     }
 }
+
+#chart-container {
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+svg {
+    border: 1px solid #ccc;
+}
+
+/* Line and area styles */
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2;
+}
+
+.area {
+    fill: steelblue;
+    opacity: 0.5;
+}
+
+.halfMilMark {
+    stroke: red;
+    stroke-dasharray: 4, 4;
+    stroke-width: 1.5;
+}
+
+.halfMilLabel {
+    fill: red;
+    font-size: 12px;
+}
