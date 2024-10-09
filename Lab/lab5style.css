@@ -272,8 +272,8 @@ body.light-mode {
     --text-color: #0a0a0a;
 }
 
-#updateButton {
-    display:flex;
+#updateButton, #transition1Button, #transition2Button {
+    display:inline-flex;
     align-items: center;         /* Vertically center the buttons if needed */
     margin: 0 auto;/* This will center the button horizontally */
     margin-bottom: 2;

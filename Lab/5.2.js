@@ -87,14 +87,13 @@ window.onload = function () {
                 return i / dataset.length * 1000;  // Dynamically calculate delay based on dataset size
             })
             .duration(1000)  // Total transition time remains 1000ms
-            .ease(d3.easeCubicInOut)
+            .ease(d3.easeQuadInOut)  // Use smooth Quad easing for softer transitions
             .attr("y", function(d) {
                 return h - yScale(d);
             })
             .attr("height", function(d) {
                 return yScale(d);
             });
-
 
         // Update y-axis
         svg.select(".y-axis")
@@ -109,5 +108,34 @@ window.onload = function () {
             .transition()
             .duration(1000)
             .call(xAxis);
+    });
+
+    // Add button event listener for "Transition 1" (Height Scaling with Smooth Effect)
+    d3.select("#transition1Button").on("click", function () {
+        svg.selectAll("rect")
+            .transition()
+            .duration(1000)
+            .ease(d3.easeQuadInOut)  // Use smoother easing for a gradual effect
+            .attr("height", d => (h - yScale(d)) * 0.3)  // Shrink bars to 30% of their original height
+            .transition()
+            .duration(1000)
+            .ease(d3.easeQuadInOut)  // Grow back with smooth easing
+            .attr("height", d => h - yScale(d))  // Restore original height
+            .attr("y", d => yScale(d));  // Reset y position
+    });
+
+    // Add button event listener for "Transition 2" (Width Shrinking and Expansion with Soft Effect)
+    d3.select("#transition2Button").on("click", function () {
+        svg.selectAll("rect")
+            .transition()
+            .duration(1000)
+            .ease(d3.easeSinInOut)  // Use sinusoidal easing for smooth in-out motion
+            .attr("width", xScale.bandwidth() * 0.2)  // Shrink width to 20% of original width
+            .attr("x", (d, i) => xScale(i) + xScale.bandwidth() * 0.4)  // Center the shrunk bars
+            .transition()
+            .duration(1000)
+            .ease(d3.easeSinInOut)  // Use smooth easing for expansion
+            .attr("width", xScale.bandwidth())  // Restore original width
+            .attr("x", (d, i) => xScale(i));  // Restore original x position
     });
 };
