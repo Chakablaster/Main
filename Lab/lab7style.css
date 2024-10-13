@@ -341,10 +341,24 @@ nav {
 #chart-container {
     margin: 50px auto;
     max-width: 800px;
+    align-items: center;
+}
+
+#chart-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.tooltip {
+    font-size: 14px;
+    color: #333;
 }
 
 svg {
     border: 1px solid #ccc;
+    margin: 50px;            /* Add space around the chart */
 }
 
 /* Line and area styles */
