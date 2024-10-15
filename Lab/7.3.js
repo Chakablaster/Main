@@ -1,5 +1,3 @@
-
-
 // Main function to create the chart
 function init() {
     // Data for the chart: Array of objects representing counts of fruits
