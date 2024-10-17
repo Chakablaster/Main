@@ -1,25 +1,27 @@
 // Main function to create the chart
 function init() {
 
-    var w = 500;
-    var h = 300;
+    // Define margins and dimensions for the chart area
+    var width = 700;
+    var height = 400;
 
     var projection = d3.geoMercator()
-                       . center([145, -36.5])
-                       .translate([w / 2, h / 2])
-                       .scale(2450);
+                       .center([145, -36.5])
+                       .translate([width / 2, height / 2])
+                       .scale(7000);
 
     // Path setup
     var path = d3.geoPath()
-                 .projection();
+                 .projection(projection);
 
-    var svg = d3.select("body")
+    var svg = d3.select("#chart-container8")
                 .append("svg")
-                .attr("width", w)
-                .attr("height", h)
+                .attr("width", width)
+                .attr("height", height)
                 .attr("fill", "grey")
 
-    d3.json(".//LGA_VIC.json").then(function(json) {
+    // Load the json file
+    d3.json("LGA_VIC.json").then(function(json) {
 
         svg.selectAll("path")
            .data(json.features)

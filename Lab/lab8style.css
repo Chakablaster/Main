@@ -340,12 +340,30 @@ nav {
 
 #chart-container {
     margin: 50px auto;
-    max-width: 800px;
+    max-width: 400px;
     align-items: center;
 }
 
-svg {
-    border: 1px solid #ccc;
-    margin: 50px;
-    /* Add space around the chart */
+#chart-container8 {
+    width: 100%;    /* Adjust width as needed */
+    max-width: 960px; /* Adjust max width as needed */
+    height: auto; /* Auto height based on content */
+    margin: auto;  /* Centering the container */
+    overflow: hidden; /* Prevents overflow */
 }
+
+#chart-container82 {
+    width: 100%;    /* Ensures container can expand */
+    max-width: 680px; /* Max width to control the expansion */
+    height: 570px; /* Ensure there's a height set to make space for the SVG */
+    margin-top: 0px;  /* Adjust to reduce the space */
+    margin: 10px auto 30px;  /* Reduce the top margin */
+    overflow: hidden; /* Keeps all SVG contents within the bounding box */
+}
+
+svg {
+    width: 100%;   /* SVG fills the container */
+    height: 100%;  /* SVG fills the container height */
+    display: block; /* Correct block display */
+}
+
