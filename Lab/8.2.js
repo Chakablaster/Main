@@ -53,15 +53,38 @@ function init() {
            .attr("d", path)
            .style("fill", d => color(d.properties.unemployed));
 
-        // Add city markers
+        // Create a tooltip for hover interactions
+        var tooltip = d3.select("body") // Append to body for flexibility
+            .append("div")
+            .attr("class", "tooltip") // Assign CSS class
+            .style("position", "absolute") // Absolute positioning
+            .style("visibility", "hidden") // Initially hidden
+            .style("background", "#fff") // Set background color
+            .style("border", "1px solid #ccc") // Set border style
+            .style("padding", "5px") // Set padding
+            .style("border-radius", "4px") // Rounded corners
+            .style("box-shadow", "0 4px 8px rgba(0, 0, 0, 0.1)"); // Shadow for aesthetics
+
+        // Add city markers and tooltip interactions
         svg.selectAll("circle")
-           .data(cityData)
-           .enter()
-           .append("circle")
-           .attr("cx", d => projection([+d.lon, +d.lat])[0])
-           .attr("cy", d => projection([+d.lon, +d.lat])[1])
-           .attr("r", "5px")
-           .attr("fill", "red");
+            .data(cityData)
+            .enter()
+            .append("circle")
+            .attr("cx", d => projection([+d.lon, +d.lat])[0]) // Position circles based on longitude
+            .attr("cy", d => projection([+d.lon, +d.lat])[1]) // Position circles based on latitude
+            .attr("r", "5px") // Set the radius of the city markers
+            .attr("fill", "red") // Set the color of the city markers
+            .on("mouseover", function(event, d) { // Mouseover event to show tooltip
+                tooltip.html(`City: ${d.place}`) // Use the correct field name from your data
+                    .style("visibility", "visible");
+            })
+            .on("mousemove", function(event) { // Mousemove to position tooltip
+                tooltip.style("top", (event.pageY - 10) + "px") // Adjust Y position
+                    .style("left", (event.pageX + 10) + "px"); // Adjust X position
+            })
+            .on("mouseout", function() { // Mouseout event to hide tooltip
+                tooltip.style("visibility", "hidden"); // Hide tooltip when mouse leaves
+            });
     });
 }
 
