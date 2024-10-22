@@ -24,7 +24,7 @@ function init() {
 
     // Load both data sources
     Promise.all([
-        d3.json("LGA_VIC.json"),
+        d3.json("https://raw.githubusercontent.com/Chakablaster/Main/refs/heads/main/Lab/LGA_VIC.json"),
         d3.csv("VIC_LGA_unemployment.csv"),
         d3.csv("VIC_city.csv")
     ]).then(function([json, unemploymentData, cityData]) {

@@ -18,10 +18,10 @@ function init() {
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
-                .attr("fill", "grey")
+                .attr("fill", "grey");
 
-    // Load the json file
-    d3.json("LGA_VIC.json").then(function(json) {
+    // Load the json file from the external URL
+    d3.json("https://raw.githubusercontent.com/Chakablaster/Main/refs/heads/main/Lab/LGA_VIC.json").then(function(json) {
 
         svg.selectAll("path")
            .data(json.features)
